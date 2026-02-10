@@ -1,0 +1,318 @@
+/* ---------------- DIAPO ---------------- */
+
+#impress {
+  filter: hue-rotate(85deg);
+}
+
+.diapo {
+  pointer-events: none;
+  width: 900px;
+  height: 650px;
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+
+.diapo.active {
+  pointer-events: all;
+  opacity: 1;
+  transition: opacity 250ms linear 250ms;
+}
+
+.impress-on-overview .diapo {
+  opacity: 1;
+}
+
+.step .substep {
+  opacity: 0;
+}
+
+.step .substep.substep-visible {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/* ---------------- OVERLAY ---------------- */
+
+.old-computer {
+  pointer-events: none;
+  z-index: 101;
+  filter: none;
+  background-image: url("/media/old_computer_screen_centered.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  height: 100%;
+  width: 100%;
+}
+
+/* le code de .old-computer-screen-grid et .old-computer-screen, incluant les images et code css, proviennent du site crimes-of-omsk.webflow.io et ont été adaptés à la présentation */
+
+.old-computer-screen-grid {
+  pointer-events: none;
+  z-index: 99;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: overlay;
+  background-image: url("/media/640700f5c0e0ea29fd81703a_Overlay_.png");
+  background-position: 50%;
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  display: flex;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.old-computer-screen {
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.2;
+  filter: none;
+  mix-blend-mode: color-dodge;
+  background-image: url("/media/640700f5c0e0eadab381703c_TubeScreen2.jpg");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  display: flex;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+/* ---------------- FONTS ---------------- */
+
+.inconsolata-Normal {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+body {
+  color: #F1AC43;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 300%;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 200%;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 150%;
+}
+
+p {
+  margin-top: 1vh;
+  margin-bottom: 0;
+  font-size: 125%;
+}
+
+.top-title {
+  margin-top: 0;
+}
+
+.justify {
+  text-align: justify;
+}
+
+#myFirstSlide h1 {
+  margin-bottom: 100px;
+}
+
+/* ---------------- BODY ---------------- */
+
+.impress-supported .fallback-message {
+  display: none;
+}
+
+body {
+  font-family: "Inconsolata", monospace;
+  background-color: #333;
+}
+
+/* ---------------- ELEMENTS' DISPLAY ---------------- */
+
+#myFirstSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#mySeventhSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.center-align {
+  justify-content: space-evenly;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+.over-timeline {
+  background-color: #333;
+}
+
+.dot {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dot-content {
+  grid-column: 2 / 11;
+}
+
+.dot-timeline {
+  grid-column: 1;
+  grid-row: 1 / 5;
+}
+
+.one {
+  grid-row: 1;
+}
+
+.two {
+  grid-row: 2;
+}
+
+.three {
+  grid-row: 3;
+}
+
+.four {
+  grid-row: 4;
+}
+
+.frame {
+  border: 2pt solid #F1AC43;
+  box-shadow: 0 0 10px #F1AC43;
+}
+
+#map-frame {
+  margin-right: 50px;
+  width: 600px;
+  height: 465px;
+}
+
+#map {
+  width: 100%;
+}
+
+.slot {
+  padding: 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* ---------------- SVG ---------------- */
+
+.rafale {
+  margin-top: 100px;
+}
+
+.logo-info {
+  height: 100px;
+  margin: 4vh;
+}
+
+.logo-weapon {
+  height: 50px;
+  width: 250px;
+  margin-top: 25px;
+}
+
+.dot-info {
+  height: 100%;
+}
+
+#rafale-silouhette {
+  width: 2.5%;
+}
+
+/* ---------------- ANIMATION ---------------- */
+
+.diapo.active .logo {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: dash 5s 1s linear forwards;
+}
+
+.diapo.active #logo-border {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: dash 2.5s 1s linear forwards;
+}
+  
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.step .substep.substep-visible.substep-active {
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-name: rangeHeavy;
+}
+
+@keyframes rangeHeavy {
+  from {
+      r: 0;
+      opacity: 0;
+  }
+  to {
+      r: 95;
+      opacity: 1;
+  }
+}
+
+.step .substep.substep-visible.substep-active {
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-name: rangeLight;
+}
+
+@keyframes rangeLight {
+  from {
+      r: 0;
+      opacity: 0;
+  }
+  to {
+      r: 160;
+      opacity: 1;
+  }
+}
